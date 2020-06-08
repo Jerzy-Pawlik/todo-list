@@ -7,6 +7,8 @@ const port = process.env.PORT || 3000
 
 app.use(serve(path.resolve(__dirname, '..', 'client')))
 
+require('./store').init()
+
 const userRoutes = require('./routes/users')
 app.use(userRoutes.routes())
 
